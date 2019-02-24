@@ -52,7 +52,7 @@ body{
     background-color: green;
     color: aliceblue;
     padding: 10px 10px;
-    margin-right: 5%;
+    margin-right: 4%;
     cursor: pointer;
     margin-top: 25px;
     border-radius: 0 6px 6px 0  ;
@@ -64,7 +64,7 @@ body{
     background-color: rgb(63, 0, 21);
     color: aliceblue;
     padding: 10px 10px;
-    margin-right: 6%;
+    margin-right: 4%;
     cursor: pointer;
     margin-top: 25px;
     border-radius: 0 6px 6px 0  ;
@@ -92,7 +92,7 @@ ul{
 #task{
     width: 63%;
     height: 33px;
-    margin-left: 4%;
+    margin-left:4%;
     border-radius: 6px 0 0  6px;
     border: none;
     text-align: center;
