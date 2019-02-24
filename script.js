@@ -1,4 +1,21 @@
+let tsk = document.getElementById('task');
+//Hide Error Message when input field is clicked
+tsk.addEventListener('click', function(){
+    errMessage.style.display = 'none';
+}) 
+
+//Add Task when input field is not empty and Enter button on the keyboard is Pressed
+tsk.addEventListener('keypress', function(e){
+    if(e.keyCode === 13){
+        add();
+        show();
+    }
+})
+
+//Calling My Digital Clock
 setInterval(DigitalClock,1000);
+
+// Get Todos
 function getTodos(){
     var todos = new Array();
     var todo_str = localStorage.getItem('todo');
@@ -9,21 +26,31 @@ function getTodos(){
     return todos;
 }
 
+//Add Todo
 function add(){
-    let task = document.getElementById('task').value;
-    let todos = getTodos();
-    todos.push(task);
-    localStorage.setItem('todo', JSON.stringify(todos));
-    show();
-    return false;
+
+    let task = tsk.value;
+    if(task != '' ){
+        let todos = getTodos();
+        todos.push(task);
+        localStorage.setItem('todo', JSON.stringify(todos));
+        show();
+        document.getElementById("task").value = '';
+        return false;
+    }else{
+        errMessage.style.display = 'block';     
+        return false;
+       } 
 }
 
+//Anonymous
 function clearDefault(a){
     if(a.defaultValue == a.value){
         a.value ='';
     }
 }
 
+//Remove Todo
 function remove(){
     let id = this.getAttribute('id');
     let todos = getTodos();
@@ -34,6 +61,7 @@ function remove(){
     return false;
 }
 
+//Fetch saved Todos from Browser Local Storage and display it
 function show(){
     let todos = getTodos();
 
@@ -51,8 +79,11 @@ function show(){
     
 }
 
+//Adding Event Listener to Add button
 document.getElementById('add').addEventListener('click', add,false);
 show();
+    
+    
 
 
 //Digital Clock

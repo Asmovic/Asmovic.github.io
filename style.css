@@ -1,6 +1,10 @@
 body{
+    background-image: url(https://cdn-images-1.medium.com/max/900/1*gnUBeL-INIVDk0_GyL8x1g.png);
+    background-size: 100%;
+                /* or */
+    /* background-color: lightsalmon; */
+
     margin: 0;
-    background-color: lightsalmon;
     color: cyan;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
